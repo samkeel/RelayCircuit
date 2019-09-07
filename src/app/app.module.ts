@@ -16,13 +16,15 @@ import { SidebarComponent } from './dashboard/layout/full/sidebar/sidebar.compon
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { UserMenuComponent } from './dashboard/layout/full/header/user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserMenuComponent
   ],
   imports: [
     BrowserModule,

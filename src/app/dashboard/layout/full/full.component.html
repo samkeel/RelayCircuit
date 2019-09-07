@@ -1,28 +1,31 @@
 <section class="mat-typography">
     <div class="main-container">
         <mat-toolbar color="primary" class="topbar">
-            <div class="navbar-header">
-                <!-- <a class="navbar-brand" href="/"> -->
-                <!-- Logo Icon -->
-                <button mat-icon-button aria-label="Home">
-                    <mat-icon>home</mat-icon>
-                </button>
-                <!-- Logo Text -->
-                <!-- </a> -->
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <div class="navbar-header">
+                        <!-- <a class="navbar-brand" href="/"> -->
+                        <!-- Logo Icon -->
+                        <button mat-icon-button aria-label="Home">
+                            <mat-icon>home</mat-icon>
+                        </button>
+                        <!-- Logo Text -->
+                        <!-- </a> -->
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!-- sidebar toggle -->
+                    <!-- ============================================================== -->
+                    <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+
+                <app-header></app-header>
+                <div fxLayout="row" fxLayoutAlign="end center">
+                    <app-user-menu></app-user-menu>
+                </div>
             </div>
-
-            <!-- ============================================================== -->
-            <!-- sidebar toggle -->
-            <!-- ============================================================== -->
-            <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
-                <mat-icon>menu</mat-icon>
-            </button>
-            
-            <app-header></app-header>
-
-            <button mat-icon-button class="ml-xs overflow-visible">
-                <mat-icon>settings</mat-icon>
-            </button>
         </mat-toolbar>
 
         <mat-sidenav-container>

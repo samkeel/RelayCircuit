@@ -9,10 +9,12 @@ import { MainComponent } from './pages/main/main.component';
 import { SidebarService } from './layout/full/sidebar/sidebar.service';
 
 import { DashboardCardService } from './pages/main/dashboardMain.service';
+import { ConduitSizeComponent } from './pages/conduit-size/conduit-size.component';
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    ConduitSizeComponent
   ],
   imports: [
     CommonModule,

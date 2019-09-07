@@ -1,0 +1,14 @@
+<button mat-icon-button class="ml-xs overflow-visible" [matMenuTriggerFor]="userSettings" aria-label="Toggle menu">
+    <mat-icon>settings</mat-icon>
+</button>
+
+<mat-menu #userSettings="matMenu" xPosition="before">
+    <a mat-menu-item routerLink="/login"> 
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Log In</span> 
+    </a>
+    <a mat-menu-item routerLink="/login"> 
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Log Out</span> 
+    </a>
+</mat-menu>
