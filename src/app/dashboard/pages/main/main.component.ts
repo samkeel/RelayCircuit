@@ -10,33 +10,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  /** Based on the screen size, switch from standard to one column per row */
-  // cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-  //   map(({ matches }) => {
-  //     if (matches) {
-  //       return [
-  //         { title: 'Card 1', cols: 1, rows: 1 },
-  //         { title: 'Card 2', cols: 1, rows: 1 },
-  //         { title: 'Card 3', cols: 1, rows: 1 },
-  //         { title: 'Card 4', cols: 1, rows: 1 }
-  //       ];
-  //     }
-
-  //     return [
-  //       { title: 'Card 1', cols: 2, rows: 1 },
-  //       { title: 'Card 2', cols: 1, rows: 1 },
-  //       { title: 'Card 3', cols: 1, rows: 2 },
-  //       { title: 'Card 4', cols: 1, rows: 1 }
-  //     ];
-  //   })
-  // );
-
   cards: Observable<any>;
 
   constructor(private breakpointObserver: BreakpointObserver, private db: AngularFirestore) {}
 
   ngOnInit() {
-    this.cards = this.db.collection('DashboardCardList').valueChanges();
+    this.cards = this.db.collection('DashboardCardList', ref => ref.orderBy('id')).valueChanges()
   }
-
 }

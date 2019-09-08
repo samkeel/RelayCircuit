@@ -10,15 +10,5 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>Conduits</mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-nav-list dense>
-                <mat-list-item *ngFor="let navItem of navItems | async">
-                    <a matLine routerLink="{{ navItem.route }}" routerLinkActive="active">{{ navItem.name }}</a>
-                </mat-list-item>
-            </mat-nav-list>
-        </mat-expansion-panel>
     </mat-accordion>
 </section>
