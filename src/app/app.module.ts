@@ -17,6 +17,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserMenuComponent } from './dashboard/layout/full/header/user-menu/user-menu.component';
+import { SidebarService } from './dashboard/layout/full/sidebar/sidebar.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { UserMenuComponent } from './dashboard/layout/full/header/user-menu/user
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [SidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

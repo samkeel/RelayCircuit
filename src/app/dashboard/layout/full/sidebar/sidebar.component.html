@@ -1,4 +1,4 @@
-<section class="mat-typography">
+<!-- <section class="mat-typography">
     <mat-accordion>
         <mat-expansion-panel>
             <mat-expansion-panel-header class="mat-body-2">
@@ -9,6 +9,24 @@
                     <a matLine routerLink="{{ navItem.route }}" routerLinkActive="active">{{ navItem.name }}</a>
                 </mat-list-item>
             </mat-nav-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+</section> -->
+
+<section class="mat-typography">
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let navList of navLists">
+            <mat-expansion-panel-header class="mat-body-2">
+                <mat-panel-title>{{navList.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-nav-list dense>
+                <mat-list-item *ngFor="let child of navList.children">
+                    <a matLine routerLink="{{ child.route }}" routerLinkActive="active">{{ child.name }}</a>
+                </mat-list-item>
+            </mat-nav-list>
+
+
         </mat-expansion-panel>
     </mat-accordion>
 </section>
