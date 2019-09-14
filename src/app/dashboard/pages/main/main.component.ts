@@ -9,12 +9,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
-  cards: Observable<any>;
+export class MainComponent {
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
-  constructor(private breakpointObserver: BreakpointObserver, private db: AngularFirestore) {}
+  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(({ matches }) => {
+      if (matches) {
+        return [
+          { title: 'Card 1', cols: 2, rows: 1 }
+        ];
+      }
 
-  ngOnInit() {
-    this.cards = this.db.collection('DashboardCardList', ref => ref.orderBy('id')).valueChanges()
-  }
+      return [
+        { title: 'Card 1', cols: 2, rows: 1 }
+      ];
+    })
+  );
 }
