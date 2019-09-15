@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // this.navItems = this.db.collection('sidebarList').valueChanges(); <-- database method
     this.navLists = this.sidebarService.getNavList();
-    console.log(this.navLists);
+    // console.log(this.navLists);
   }
 
   ngOnDestroy(){}

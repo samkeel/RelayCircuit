@@ -1,1 +1,8 @@
-<p>conduit-size works!</p>
+<mat-form-field>
+  <mat-label>Cable Size</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let conduitCable of conduitCables | async" [value]="conduitCable.id">
+      {{conduitCable.title}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

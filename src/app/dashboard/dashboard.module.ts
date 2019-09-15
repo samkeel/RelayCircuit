@@ -11,6 +11,7 @@ import { SidebarService } from './layout/full/sidebar/sidebar.service';
 import { DashboardCardService } from './pages/main/dashboardMain.service';
 import { ConduitSizeComponent } from './pages/conduit-size/conduit-size.component';
 import { TestListsComponent } from './pages/test-lists/test-lists.component';
+import { ConduitCableTypeService } from './pages/Conduit/conduit.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,10 @@ import { TestListsComponent } from './pages/test-lists/test-lists.component';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [SidebarService, DashboardCardService]
+  providers: [
+    SidebarService, 
+    DashboardCardService, 
+    ConduitCableTypeService
+  ]
 })
 export class DashboardModule { }
