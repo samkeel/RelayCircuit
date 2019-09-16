@@ -1,8 +1,30 @@
-<mat-form-field>
-  <mat-label>Cable Size</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let conduitCable of conduitCables | async" [value]="conduitCable.id">
-      {{conduitCable.title}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<section class="conduit-cards" fxLayout="column" fxLayoutAlign="space-around center">
+  <mat-card fxFlex.xs="100%" fxFlex="100px">
+    <mat-card-content fxLayoutAlign="center">
+      <mat-form-field>
+        <mat-label>Cable Size</mat-label>
+        <mat-select (selectionChange)="firstMethod($event.value)">
+          <mat-option *ngFor="let conduitCable of conduitCables | async" [value]="conduitCable._id">
+            {{conduitCable.title}}
+          </mat-option>
+        </mat-select>
+        <!-- <mat-hint>You selected: {{selected}}</mat-hint> -->
+      </mat-form-field>      
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.xs="100%" fxFlex="100px">
+    <mat-card-content fxLayoutAlign="center">
+      <mat-form-field>
+        <mat-label>value 2</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let v of _values2">
+            {{v}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+
+</section>

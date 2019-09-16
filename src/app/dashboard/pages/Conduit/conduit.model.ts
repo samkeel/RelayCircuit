@@ -1,4 +1,4 @@
 export interface conduitCableType {
-    id: number;
+    _id: number;
     title: string;
 }
