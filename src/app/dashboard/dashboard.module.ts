@@ -12,12 +12,16 @@ import { DashboardCardService } from './pages/main/dashboardMain.service';
 import { ConduitSizeComponent } from './pages/conduit-size/conduit-size.component';
 import { TestListsComponent } from './pages/test-lists/test-lists.component';
 import { ConduitCableTypeService } from './pages/Conduit/conduit.service';
+import { LoginComponent } from './pages/login/login.component';
+
 
 @NgModule({
   declarations: [
     MainComponent,
     ConduitSizeComponent,
-    TestListsComponent
+    TestListsComponent,
+    LoginComponent
+    
   ],
   imports: [
     CommonModule,

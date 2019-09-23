@@ -19,6 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserMenuComponent } from './dashboard/layout/full/header/user-menu/user-menu.component';
 import { SidebarService } from './dashboard/layout/full/sidebar/sidebar.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
