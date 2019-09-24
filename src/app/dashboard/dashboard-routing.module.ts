@@ -4,6 +4,8 @@ import { MainComponent } from './pages/main/main.component';
 import { ConduitSizeComponent } from './pages/conduit-size/conduit-size.component';
 import { TestListsComponent } from './pages/test-lists/test-lists.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
 
 
 const routes: Routes = [
@@ -13,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'conduit-size',
-    component: ConduitSizeComponent
+    component: ConduitSizeComponent, 
+    canActivate: [AuthGuard]
   },
   {
     path: 'test-lists',
@@ -27,6 +30,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class DashboardRoutingModule { }

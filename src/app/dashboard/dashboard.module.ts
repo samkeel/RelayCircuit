@@ -13,6 +13,7 @@ import { ConduitSizeComponent } from './pages/conduit-size/conduit-size.componen
 import { TestListsComponent } from './pages/test-lists/test-lists.component';
 import { ConduitCableTypeService } from './pages/Conduit/conduit.service';
 import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoginComponent } from './pages/login/login.component';
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [
     SidebarService, 

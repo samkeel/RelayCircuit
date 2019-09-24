@@ -3,11 +3,11 @@
 </button>
 
 <mat-menu #userSettings="matMenu" xPosition="before">
-    <a mat-menu-item routerLink="/login"> 
+    <a *ngIf="!isAuth" mat-menu-item routerLink="/login"> 
         <mat-icon>power_settings_new</mat-icon>
         <span>Log In</span> 
     </a>
-    <a mat-menu-item routerLink="/login"> 
+    <a *ngIf="isAuth" mat-menu-item (click)="onLogout()"> 
         <mat-icon>power_settings_new</mat-icon>
         <span>Log Out</span> 
     </a>

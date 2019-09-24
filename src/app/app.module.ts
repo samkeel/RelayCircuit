@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserMenuComponent } from './dashboard/layout/full/header/user-menu/user-menu.component';
 import { SidebarService } from './dashboard/layout/full/sidebar/sidebar.service';
+import { AuthGuard } from './dashboard/auth/auth.guard';
+import { AuthService } from './dashboard/auth/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,11 +40,13 @@ import { SidebarService } from './dashboard/layout/full/sidebar/sidebar.service'
     FlexLayoutModule,
     HttpClientModule,
     NoopAnimationsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [SidebarService],
+  providers: [SidebarService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
