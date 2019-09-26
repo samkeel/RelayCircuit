@@ -1,28 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent {
-  constructor(private breakpointObserver: BreakpointObserver) { }
+export class MainComponent implements OnInit, OnDestroy {
+  isAuth = false;
+  authSubscription: Subscription;
+  constructor(
+    private authService: AuthService) { }
 
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 2, rows: 1 }
-        ];
-      }
+  ngOnInit() {
+    this.authSubscription = this.authService.authChange.subscribe(authStatus => {
+      this.isAuth = authStatus;
+    });
+  }
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 }
-      ];
-    })
-  );
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
+  }
 }

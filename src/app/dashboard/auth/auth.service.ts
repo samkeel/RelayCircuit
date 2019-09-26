@@ -20,7 +20,7 @@ export class AuthService {
             if (user) {
                 this.isAuthenticated = true;
                 this.authChange.next(true);
-                this.router.navigate(['/conduit-size']);
+                this.router.navigate(['/']);
             } else {
                 this.authChange.next(false);
                 this.router.navigate[('/login')];
